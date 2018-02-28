@@ -1,8 +1,11 @@
 const deck = []
 let btn = document.querySelector("button")
-let h1 = document.querySelector("h1")
+let span = document.querySelectorAll("span")
+let r
+let pickedCards = []
 
-
+createDeck()
+function createDeck(){
 for(let i = 1; i <= 52; i++){
 	// creates numbered cards and puts them in the deck
 	let num = i
@@ -49,16 +52,27 @@ for(let i = 1; i <= 52; i++){
 	else if(i>=40){
 		s = "Spades"
 	}
-	// else if(i>=28)
+
 
 	deck.push({number: num, suit: s})
+}
 }
 
 btn.addEventListener("click", randomCard)
 
 function randomCard(){
-	let r = 0
-	r = Math.floor(Math.random() * 52)
-	h1.textContent = deck[r].number + " of "+ deck[r].suit
-}
+	for(i=0; i<2; i++){
+
+		// random number from deck array length
+		r = Math.floor(Math.random() * deck.length)
+		// put selected card into pickedCards array
+		pickedCards.push(deck[r])
+		
+		// print cards to html
+		span[i].textContent = deck[r].number + " of "+ deck[r].suit
+		// remove that card from the deck
+		deck.splice(r, 1,)
+	}
+console.log(pickedCards)
 console.log(deck)
+}
