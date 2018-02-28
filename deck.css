@@ -1,3 +1,17 @@
 h1{
 	height: 20px;
 }
+/*span{height: 20px;
+width: 100px;
+background-color:cyan;
+}*/
+#main{
+	
+	text-align: center
+}
+.card-space{
+	height: 20px;
+	width: 150px;
+	background-color: cyan;
+	margin: 5px;
+}
