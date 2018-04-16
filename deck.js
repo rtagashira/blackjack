@@ -4,7 +4,12 @@ let span = document.querySelectorAll("span")
 let r
 let pickedCards = []
 
-createDeck()
+// create 6 decks
+for(let i=0;i<6;i++){
+	createDeck()
+}
+
+
 function createDeck(){
 for(let i = 1; i <= 52; i++){
 	// creates numbered cards and puts them in the deck
@@ -61,7 +66,7 @@ for(let i = 1; i <= 52; i++){
 btn.addEventListener("click", randomCard)
 
 function randomCard(){
-	for(i=0; i<2; i++){
+	for(i=0; i<4; i++){
 
 		// random number from deck array length
 		r = Math.floor(Math.random() * deck.length)
@@ -69,9 +74,12 @@ function randomCard(){
 		pickedCards.push(deck[r])
 		
 		// print cards to html
-		span[i].textContent = deck[r].number + " of "+ deck[r].suit
+		
+		span[i].textContent = `${deck[r].number} of ${deck[r].suit}`
 		// remove that card from the deck
 		deck.splice(r, 1,)
+
+
 	}
 console.log(pickedCards)
 console.log(deck)
